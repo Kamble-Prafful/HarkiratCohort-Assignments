@@ -4,7 +4,22 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  //* Initial Approach
+  // for (let i = 0; i <= str.length - 1; i++) {
+  //   str = str.replace(".", "");
+  //   str = str.replace(",", "");
+  //   str = str.replace("!", "");
+  //   str = str.replace(":", "");
+  //   str = str.replace(";", "");
+  //   str = str.replace("-", "");
+  //   str = str.replace(" ", "");
+  //   str = str.replace("?", "");
+  // }
+  // return str.toLowerCase().split("").reverse().join("") === str.toLowerCase();
+
+  //* Optimized Approach by doing R&D
+  str = str.replace(/[.,!:;-? ]/g, "").toLowerCase();
+  return str.toLowerCase().split("").reverse().join("") === str.toLowerCase();
 }
 
 module.exports = isPalindrome;
